@@ -1,0 +1,19 @@
+Package: lab6
+Title: This package contains three diffrent functions for solving the knapsack problem.
+Version: 0.0.0.9000
+Authors@R: 
+    person("Mona", "Moslemzadeh", , "monmo538@student.liu.se", role = c("aut", "cre"))
+    person("Adeel", "Ahmad", , "adeah090@student.liu.se", role = c("aut", "cre"))
+Description: The package find the knapsack with the largest value of the elements added
+to the knapsack.There are three different algorithms for solving this NP-hard problem, 
+which include Brute force search, Dynamic programming, and Greedy heuristic.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+VignetteBuilder: knitr
