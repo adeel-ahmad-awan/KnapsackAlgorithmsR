@@ -1,3 +1,10 @@
+#' Brute force solution for knapsack problem. 
+#' @description This algorithm tries all possible alternatives of items in the knapsack and optimize the solution.
+#' @param x A data frame with 2 columns which include w (weight)and v (value)
+#' @param W Represent the total capacity of the knapsack
+#' @return A list which includes the total value of all the items and all the elements that are in the knapsack.
+#' @export
+
 brute_force_knapsack <- function(x, W) {
 
   if(missing(x) || missing(W)) {

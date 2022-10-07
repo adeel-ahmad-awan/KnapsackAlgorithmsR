@@ -1,3 +1,10 @@
+#' Greedy heuristic solution for knapsack problem
+#' @description This algorithm will does not give an exact result, but it will reduce the computational complexity considerably.
+#' @param x A data frame with 2 columns which include w (weight)and v (value)
+#' @param W Represent the total capacity of the knapsack
+#' @return A list which includes the total value of all the items and all the elements that are in the knapsack.
+#' @export
+
 greedy_knapsack <- function(x, W) {
   if(missing(x) || missing(W)) {
     stop("Param missing")

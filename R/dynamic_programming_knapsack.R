@@ -1,3 +1,11 @@
+#' Dynamic Programming solution for knapsack problem
+#' @description An algorithm to get the optimal solution for the knapsack problem by iterating over all possible values of w. This algorithm should scale much better since the algorithm will run in O(W n).
+#' @param x A data frame with 2 columns which include w (weight)and v (value)
+#' @param W Represent the total capacity of the knapsack
+#' @return A list which includes the total value of all the items and all the elements that are in the knapsack.
+#' @export
+
+
 dynamic_programming_knapsack <- function(x, W) {
   if(missing(x) || missing(W)) {
     stop("Param missing")
