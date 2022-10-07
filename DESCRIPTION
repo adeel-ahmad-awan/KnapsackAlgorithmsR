@@ -1,5 +1,5 @@
 Package: lab6
-Title: This package contains three diffrent functions for solving the knapsack problem.
+Title: This package contains three diffrent functions for solving the knapsack problem
 Version: 0.0.0.9000
 Authors@R: 
     person("Mona", "Moslemzadeh", , "monmo538@student.liu.se", role = c("aut", "cre"))
