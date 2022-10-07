@@ -85,7 +85,7 @@ dynamic_programming_knapsack <- function(x, W) {
 
     for (i in 1:length(valueVector)) {
       if (valueRowIndex - 1 > 0 && myMatrix[valueRowIndex - 1, valueColIndex] != myMatrix[valueRowIndex, valueColIndex]) {
-        includedValues <<- append(includedValues, valueVector[valueRowIndex])
+        includedValues <<- append(includedValues, valueRowIndex)
 
         valueColIndex <<- valueColIndex - wieghtVector[valueRowIndex]
         if (valueColIndex < 1) {

@@ -17,7 +17,10 @@ greedy_knapsack <- function(x, W) {
   myValue <- sum(x$v[1:(count-2)])
   elements <- as.numeric(rownames(x[1:(count-2),]))
 
-  print(myValue)
-  print(elements)
+
+
+  returnValue <- list(myValue, elements)
+  names(returnValue) <- c("value", "elements")
+  return(returnValue)
 
 }
