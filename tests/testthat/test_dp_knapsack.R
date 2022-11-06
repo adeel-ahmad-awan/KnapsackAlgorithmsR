@@ -9,9 +9,10 @@ knapsack_objects <- data.frame(
 )
 
 test_that("Correct object is returned", {
-  expect_silent(gk <- dynamic_programming_knapsack(x = knapsack_objects[1:8,], W = 3500))
-  expect_named(gk, c("value", "elements"))
+  expect_silent(bfk <- dynamic_programming_knapsack(x = knapsack_objects[1:8,], W = 3500))
+  expect_named(bfk, c("value", "elements"))
 })
+
 
 test_that("functions rejects errounous input.", {
   expect_error(dynamic_programming_knapsack("hej", 3500))
@@ -19,28 +20,22 @@ test_that("functions rejects errounous input.", {
 })
 
 test_that("Function return correct results.", {
-  # gk <- dynamic_programming_knapsack(x = knapsack_objects[1:8,], W = 3500)
-  # expect_equal(round(gk$value), 15428)
-  # expect_true(all(round(gk$elements) %in% c(3, 8)))
-  #
-  # gk <- dynamic_programming_knapsack(x = knapsack_objects[1:12,], W = 3500)
-  # expect_equal(round(gk$value), 15428)
-  # expect_true(all(round(gk$elements) %in% c(3, 8)))
+  bfk <- dynamic_programming_knapsack(x = knapsack_objects[1:8,], W = 3500)
+  expect_equal(round(bfk$value), 16770)
+  expect_true(all(round(bfk$elements) %in% c(5, 8)))
 
-  # gk <- dynamic_programming_knapsack(x = knapsack_objects[1:8,], W = 2000)
-  # expect_equal(round(gk$value), 15428)
-  # expect_true(all(round(gk$elements) %in% c(3, 8)))
-  #
-  # gk <- dynamic_programming_knapsack(x = knapsack_objects[1:12,], W = 2000)
-  # expect_equal(round(gk$value), 15428)
-  # expect_true(all(round(gk$elements) %in% c(3, 8)))
-  #
-  # st <- system.time(gk <- dynamic_programming_knapsack(x = knapsack_objects[1:16,], W = 2000))
-  # expect_true(as.numeric(st)[2] <= 0.01)
-  #
-  # gk <- dynamic_programming_knapsack(x = knapsack_objects[1:800,], W = 3500)
-  # expect_equal(round(gk$value), 192647)
-  #
-  # gk <- dynamic_programming_knapsack(x = knapsack_objects[1:1200,], W = 3500)
-  # expect_equal(round(gk$value), 270290)
+  bfk <- dynamic_programming_knapsack(x = knapsack_objects[1:12,], W = 3500)
+  expect_equal(round(bfk$value), 16770)
+  expect_true(all(round(bfk$elements) %in% c(5, 8)))
+
+  bfk <- dynamic_programming_knapsack(x = knapsack_objects[1:8,], W = 2000)
+  expect_equal(round(bfk$value), 15428)
+  expect_true(all(round(bfk$elements) %in% c(3, 8)))
+
+  bfk <- dynamic_programming_knapsack(x = knapsack_objects[1:12,], W = 2000)
+  expect_equal(round(bfk$value), 15428)
+  expect_true(all(round(bfk$elements) %in% c(3, 8)))
+
+  st <- system.time(bfk <- dynamic_programming_knapsack(x = knapsack_objects[1:16,], W = 2000))
+  expect_true(as.numeric(st)[2] >= 0.00)
 })
