@@ -2,18 +2,18 @@
 % Please edit documentation in R/dynamic_programming_knapsack.R
 \name{dynamic_programming_knapsack}
 \alias{dynamic_programming_knapsack}
-\title{dynamic_programming_knapsack}
+\title{Dynamic Programming solution for knapsack problem}
 \usage{
 dynamic_programming_knapsack(x, W)
 }
 \arguments{
-\item{x}{data frame.}
+\item{x}{A data frame with 2 columns which include w (weight)and v (value)}
 
-\item{W}{A number.}
+\item{W}{Represent the total capacity of the knapsack}
 }
 \value{
-result containing value and elements in \code{list}.
+A list which includes the total value of all the items and all the elements that are in the knapsack.
 }
 \description{
-This function solve knapsack using dynamic programming approach.
+An algorithm to get the optimal solution for the knapsack problem by iterating over all possible values of w. This algorithm should scale much better since the algorithm will run in O(W n).
 }

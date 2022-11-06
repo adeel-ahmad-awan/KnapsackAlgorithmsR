@@ -83,5 +83,4 @@ greedy_knapsack <- function(x, W, fast = FALSE) {
   returnValue <- list(myValue, elements)
   names(returnValue) <- c("value", "elements")
   return(returnValue)
-
 }

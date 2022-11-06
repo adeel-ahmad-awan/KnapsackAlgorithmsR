@@ -2,18 +2,18 @@
 % Please edit documentation in R/brute_force_knapsack.R
 \name{brute_force_knapsack}
 \alias{brute_force_knapsack}
-\title{brute_force_knapsack}
+\title{Brute force solution for knapsack problem.}
 \usage{
 brute_force_knapsack(x, W)
 }
 \arguments{
-\item{x}{data frame.}
+\item{x}{A data frame with 2 columns which include w (weight)and v (value)}
 
-\item{W}{A number.}
+\item{W}{Represent the total capacity of the knapsack}
 }
 \value{
-result containing value and elements in \code{list}.
+A list which includes the total value of all the items and all the elements that are in the knapsack.
 }
 \description{
-This function solve knapsack using brute force approach.
+This algorithm tries all possible alternatives of items in the knapsack and optimize the solution.
 }
