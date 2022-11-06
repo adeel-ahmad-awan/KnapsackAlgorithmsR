@@ -1,3 +1,9 @@
+#' brute_force_knapsack
+#' @description This function solve knapsack using brute force approach.
+#' @param x data frame.
+#' @param W A number.
+#' @return result containing value and elements in `list`.
+#' @export
 brute_force_knapsack <- function(x, W) {
 
   if(missing(x) || missing(W)) {
@@ -38,7 +44,7 @@ brute_force_knapsack <- function(x, W) {
 
       if (temp > optimumValue) {
         optimumValue <<- temp
-        optimumVactor <<- active
+        optimumVactor <<- as.numeric(active)
       }
     }
     else {

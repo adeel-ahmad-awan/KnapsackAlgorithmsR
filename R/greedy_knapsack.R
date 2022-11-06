@@ -1,4 +1,11 @@
-greedy_knapsack <- function(x, W) {
+#' greedy_knapsack
+#' @description This function solve knapsack using greedy approach.
+#' @param x data frame.
+#' @param W A number.
+#' @param fase A bool
+#' @return result containing value and elements in `list`.
+#' @export
+greedy_knapsack <- function(x, W, fast = FALSE) {
   if(missing(x) || missing(W)) {
     stop("Param missing")
   }
@@ -25,20 +32,53 @@ greedy_knapsack <- function(x, W) {
   temp <- order(temp, decreasing = TRUE)
   x <- x[temp,]
 
-  currWeight <- 0
 
-  count <- 1
-  while (currWeight <= W) {
-    currWeight <- sum(x$w[1:count])
-    count = count + 1
-    if (is.na(currWeight)) {
-      break
+  if (fast) {
+
+    src <-
+      "int getCount(NumericVector myarr, int W)
+    {
+    int currWeight = 0;
+    int count = 1;
+    while (currWeight <= W)
+    {
+    int start = 0;
+    int end = count - 1;
+    int tempVal = 0;
+    for (int i = start; i <= end; i++)
+    {
+      tempVal = tempVal + myarr[i];
+    }
+
+    currWeight = tempVal;
+    count = count + 1;
+    if (R_isnancpp(currWeight))
+    {
+    break;
+    }
+    }
+
+    return count;
+    }
+    "
+
+    Rcpp::cppFunction(src)
+    count <- getCount(as.vector(as.numeric(x$w)), W)
+  } else {
+    currWeight <- 0
+    count <- 1
+    while (currWeight <= W) {
+      currWeight <- sum(x$w[1:count])
+      count = count + 1
+      if (is.na(currWeight)) {
+        break
+      }
     }
   }
+
+
   myValue <- sum(x$v[1:(count-2)])
   elements <- as.numeric(rownames(x[1:(count-2),]))
-
-
 
   returnValue <- list(myValue, elements)
   names(returnValue) <- c("value", "elements")

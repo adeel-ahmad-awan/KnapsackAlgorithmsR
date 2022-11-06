@@ -1,3 +1,9 @@
+#' dynamic_programming_knapsack
+#' @description This function solve knapsack using dynamic programming approach.
+#' @param x data frame.
+#' @param W A number.
+#' @return result containing value and elements in `list`.
+#' @export
 dynamic_programming_knapsack <- function(x, W) {
   if(missing(x) || missing(W)) {
     stop("Param missing")
@@ -72,8 +78,8 @@ dynamic_programming_knapsack <- function(x, W) {
   myMatrix[1,] <- 0
 
 
-  # loop through the martix and at every cell
-  # make a decision that we should or should not include the item based on prevvious result
+  # loop through the matrix and at every cell
+  # make a decision that we should or should not include the item based on previous result
   # If included add the value of the item
   for (i in 1:length(myMatrix[,1])) {
     matrixRow <- myMatrix[i, ]
