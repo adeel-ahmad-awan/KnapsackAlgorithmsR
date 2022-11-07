@@ -58,7 +58,16 @@ The third function does not always find the optimal solution to the problem but 
 
 ```{r}
 starttime <- Sys.time()
-greedy_knapsack (x = knapsack_objects[1:800,], W = 3500)
+greedy_knapsack (x = knapsack_objects[1:800,], W = 3500, fast = TRUE)
+endtime <- Sys.time()
+print(endtime-starttime)
+```
+
+By running the C++ Code for Greedy algorithm, the run time will be optimized. As you see in the code, if the fast is FALSE, the C++ code will run, and if it is TRUE, the R code will run.
+
+```{r}
+starttime <- Sys.time()
+greedy_knapsack (x = knapsack_objects[1:800,], W = 3500, fast = FALSE)
 endtime <- Sys.time()
 print(endtime-starttime)
 ```
