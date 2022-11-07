@@ -2,7 +2,7 @@
 #' @description This function solve knapsack using greedy approach.
 #' @param x data frame.
 #' @param W A number.
-#' @param fast A bool
+#' @param fast A Boolean
 #' @return result containing value and elements in `list`.
 #' @export
 greedy_knapsack <- function(x, W, fast = FALSE) {

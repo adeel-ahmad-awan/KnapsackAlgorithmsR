@@ -11,7 +11,7 @@ greedy_knapsack(x, W, fast = FALSE)
 
 \item{W}{A number.}
 
-\item{fase}{A bool}
+\item{fast}{A Boolean}
 }
 \value{
 result containing value and elements in \code{list}.
