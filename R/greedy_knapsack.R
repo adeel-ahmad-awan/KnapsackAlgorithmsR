@@ -34,6 +34,7 @@ greedy_knapsack <- function(x, W, fast = FALSE) {
 
 
   if (fast) {
+    getCount = NULL
 
     src <-
       "int getCount(NumericVector myarr, int W)
