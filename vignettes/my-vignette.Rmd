@@ -87,7 +87,6 @@ By running the C++ Code for Greedy algorithm, the run time will be optimized. As
 
 #### Q4: What performance gain could you get by trying to improving your code?
 ```{r}
-library(profvis)
 n <- 2000
 knapsack_objects <-
   data.frame(
@@ -95,7 +94,7 @@ knapsack_objects <-
     v=runif(n = n, 0, 2000)
     )
 
-profvis(greedy_knapsack (x = knapsack_objects[1:1000000,], W = 3500))
+profvis::profvis(greedy_knapsack (x = knapsack_objects[1:1000000,], W = 3500))
 ```
 After running the profvis function on greedy_knapsack we find out that out condition to verify that the input has dataframe, is taking up the most chunk of the time and memory. The following is the code and its result
 
