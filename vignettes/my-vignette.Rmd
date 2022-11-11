@@ -141,7 +141,7 @@ print(endtime-starttime)
 Without using Rcpp the time difference is the following 
 ```{r, results='hide'}
 starttime <- Sys.time()
-greedy_knapsack (x = knapsack_objects, W = 3500, fast = FALSE)
+greedy_knapsack(x = knapsack_objects, W = 3500, fast = FALSE)
 endtime <- Sys.time()
 
 ```
