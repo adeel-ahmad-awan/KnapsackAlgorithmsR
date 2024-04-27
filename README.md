@@ -1,7 +1,7 @@
 # Knapsack Algorithms R
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/Monmo538/lab6/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Monmo538/lab6/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/adeel-ahmad-awan/KnapsackAlgorithmsR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/adeel-ahmad-awan/KnapsackAlgorithmsR/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ### How the Functions work
