@@ -1,4 +1,5 @@
-# lab6
+# Knapsack Algorithms R
+
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/Monmo538/lab6/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Monmo538/lab6/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
@@ -6,7 +7,7 @@
 ### How the Functions work
 
 This package includes three functions to solve the knapsack problem. All the functions have 2 inputs: 1. "x" (A data frame with 2 columns which include w (weight)and v (value)) and "W" (the total capacity of the knapsack).
-All the functions return a list including the maximum value (A list which includes the total value of all the items and all the elements that are in the knapsack).
+All the functions return a list including the maximum value (A list that includes the total value of all the items and elements in the knapsack).
 
 #### Brute Force Algorithm
 This first function solves the knapsack problem by evaluating every possible combination of elements in the knapsack and calculating their weight. 
@@ -39,7 +40,7 @@ endtime <- Sys.time()
 print(endtime-starttime)
 ```
 
-By running the C++ Code for Greedy algorithm, the run time will be optimized. As you see in the code, if the fast is FALSE, the C++ code will run, and if it is TRUE, the R code will run.
+The run time will be optimized by running the C++ Code for the Greedy algorithm. As you see in the code, if the fast is FALSE, the C++ code will run, and if it is TRUE, the R code will run.
 
 ```{r}
 starttime <- Sys.time()
